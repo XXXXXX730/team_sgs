@@ -5,11 +5,8 @@ date: "2025-12-12"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, eval=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-```
-
-```{r}
 install.packages('pacman')
 
 pacman::p_load(here,
@@ -19,7 +16,8 @@ pacman::p_load(here,
                skim)
 ```
 
-```{r}
+
+```{r eval=FALSE}
 class.data.collection <- import(here('1_import','data_entry_2.csv'))
 
 a <- import(here('1_import','A.xlsx'))
@@ -37,7 +35,7 @@ population <- import(here('1_import','POP.rds'))
 ```
 
 
-```{r}
+```{r eval=FALSE}
 
 data.master <- bind_rows(a,b,se,p )
 
@@ -51,8 +49,11 @@ export(data.master, here('2_export','data.master.RDS'))
 colnames(data.master)
 
 ```
-```{r}
+```{r eval=FALSE}
 skimr::skim(data.master)
+```
+```{r}
+
 ```
 
 
