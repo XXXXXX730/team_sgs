@@ -39,8 +39,20 @@ population <- import(here('1_import','POP.rds'))
 
 ```{r}
 
-master <- merge(a, b, class.data.collection,se, by = ,all.x = TRUE)
+data.master <- bind_rows(a,b,se,p )
 
+export(data.master, here('2_export','data.master.RDS'))
+
+```
+
+
+
+```{r}
+colnames(data.master)
+
+```
+```{r}
+skimr::skim(data.master)
 ```
 
 
