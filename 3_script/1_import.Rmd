@@ -10,6 +10,38 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r}
+install.packages('pacman')
+
+pacman::p_load(here,
+               rio,
+               gtsummary,
+               tidyverse,
+               skim)
+```
+
+```{r}
+class.data.collection <- import(here('1_import','data_entry_2.csv'))
+
+a <- import(here('1_import','A.xlsx'))
+
+b <- import(here('1_import','B.xlsx'))
+se <- import(here('1_import','SouthEast.xlsx'))
+
+p <- import(here('1_import','P.xlsx'))
+
+population <- import(here('1_import','POP.rds'))
+
+
+
 
 ```
+
+
+```{r}
+
+master <- merge(a, b, class.data.collection,se, by = ,all.x = TRUE)
+
+```
+
+
 
